@@ -1,1 +1,9 @@
 # simple-grommet-coffee-full-stack
+## References
+- [React](https://reactjs.org/docs/getting-started.html)
+- [crsandeep/simple-react-full-stack](https://github.com/crsandeep/simple-react-full-stack#simple-react-full-stack)
+- [grommet/grommet](https://github.com/grommet/grommet)
+  - [components](https://v2.grommet.io/components)
+  - [storybook](https://storybook.grommet.io/?path=/story/components--all)
+  - [icons](https://icons.grommet.io/)
+- [@fellow/eslint-plugin-coffee](https://github.com/aminland/eslint-plugin-coffee#felloweslint-plugin-coffee)
