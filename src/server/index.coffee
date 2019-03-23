@@ -9,4 +9,4 @@ app.get '/api/getUsername', (req, res) ->
     username: os.userInfo().username
 
 app.listen process.env.PORT || 8080, ->
-  console.log "Listening on port #{process.env.PORT || 8080}!"
+  console.log "Listening on port #{process.env.PORT or 8080}!"

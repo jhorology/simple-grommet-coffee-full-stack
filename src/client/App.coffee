@@ -26,9 +26,9 @@ AppBar = (props) ->
     align='center'
     justify='between'
     background='brand'
-    pad={{ left: 'medium', right: 'small', vertical: 'small' }}
+    pad={left: 'medium', right: 'small', vertical: 'small'}
     elevation='medium'
-    style={{ zIndex: '1' }}
+    style={zIndex: '1'}
     {...props}
   />
 
@@ -44,7 +44,7 @@ class App extends Component
     user = await res.json()
     @setState
       userName: user.username
-      
+
   handleMenuClick: (e) =>
     @setState (prevState) ->
       showSidebar: not prevState.showSidebar
@@ -52,7 +52,7 @@ class App extends Component
   handleCloseClick: (e) =>
     @setState
       showSidebar: off
-    
+
   render: ->
     {showSidebar, userName} = @state
     <Grommet theme={theme} full>
@@ -60,11 +60,10 @@ class App extends Component
         {(size) =>
           <Box fill>
             <AppBar>
-              <Heading level='3' margin='none'>{if userName then "Hello #{userName}!" else 'Loading.. please wait!'}</Heading>
+              <Heading level='3' margin='none'>{if userName then "Hello #{userName}" else 'Loading.. please wait!'}</Heading>
               <Button
                 icon={<Menu/>}
-                onClick={@handleMenuClick}
-              />
+                onClick={@handleMenuClick}/>
             </AppBar>
             <Box direction='row' flex overflow={horizontal: 'hidden'}>
               <Box flex align='center' justify='center'>
@@ -107,4 +106,4 @@ class App extends Component
       </ResponsiveContext.Consumer>
     </Grommet>
 
-export default App;
+export default App
