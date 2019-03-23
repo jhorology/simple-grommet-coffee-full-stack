@@ -1,7 +1,7 @@
 express = require 'express'
 os      = require 'os'
 
-app = express();
+app = express()
 
 app.use express.static 'dist'
 app.get '/api/getUsername', (req, res) ->

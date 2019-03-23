@@ -53,7 +53,7 @@ class App extends Component
     @setState
       showSidebar: off
 
-  render: ->
+  render: =>
     {showSidebar, userName} = @state
     <Grommet theme={theme} full>
       <ResponsiveContext.Consumer>
