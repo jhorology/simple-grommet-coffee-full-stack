@@ -5,6 +5,6 @@ module.exports =
       value: 2
     ]
     '@fellow/coffee/braces-spacing': ['warn',
-       paces: 0
+       spaces: 0
        empty_object_spaces: 0
     ]

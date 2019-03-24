@@ -40,11 +40,14 @@ class App extends Component
       userName: null
 
   componentDidMount: ->
+    @fetchUserName()
+
+  fetchUserName: ->
     res = await fetch('/api/getUsername')
     user = await res.json()
     @setState
       userName: user.username
-
+    
   handleMenuClick: (e) =>
     @setState (prevState) ->
       showSidebar: not prevState.showSidebar
