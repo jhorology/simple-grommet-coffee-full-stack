@@ -8,7 +8,7 @@ import {
   Layer
   ResponsiveContext
 } from 'grommet'
-import {FormClose, Menu} from 'grommet-icons'
+import {FormClose, Menu } from 'grommet-icons'
 
 theme =
   global:
@@ -28,7 +28,7 @@ AppBar = (props) ->
     background='brand'
     pad={left: 'medium', right: 'small', vertical: 'small'}
     elevation='medium'
-    style={zIndex: '1'}
+    style={zIndex: '1' }
     {...props}
   />
 
@@ -47,7 +47,7 @@ class App extends Component
     user = await res.json()
     @setState
       userName: user.username
-    
+
   handleMenuClick: (e) =>
     @setState (prevState) ->
       showSidebar: not prevState.showSidebar
@@ -56,7 +56,7 @@ class App extends Component
     @setState
       showSidebar: off
 
-  render: =>
+  render: ->
     {showSidebar, userName} = @state
     <Grommet theme={theme} full>
       <ResponsiveContext.Consumer>
