@@ -2,9 +2,15 @@ path               = require 'path'
 HtmlWebpackPlugin  = require 'html-webpack-plugin'
 CleanWebpackPlugin = require 'clean-webpack-plugin'
 
+loader = (name, opts) ->
+  if opts
+    loader: name
+    options: opts
+  else
+    name
+
 module.exports =
   entry: [
-    'babel-polyfill'
     './src/client/index.coffee'
   ]
   output:
@@ -14,22 +20,25 @@ module.exports =
     rules: [{
       test: /\.coffee$/
       exclude: /node_modules/
-      use: [{
-        loader: 'babel-loader'
-      }
-      {
-        loader:'coffee-loader'
-        options:
+      use: [
+        loader 'babel-loader'
+        loader 'coffee-loader',
           sourceMap: on
-      }]
+      ]
     }
     {
       test: /\.css$/
-      use: ['style-loader', 'css-loader']
+      use: [
+        loader 'style-loader'
+        loader 'css-loader'
+      ]
     }
     {
       test: /\.(png|woff|woff2|eot|ttf|svg)$/
-      loader: 'url-loader?limit=100000'
+      use: [
+        loader 'url-loader',
+          limit: 100000
+      ]
     }]
   resolve:
     extensions: ['.coffee', '.js', '.jsx']

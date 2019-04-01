@@ -15,5 +15,4 @@ module.exports =
     preset '@babel/preset-react'
   ]
   plugins: [
-    plugin '@babel/plugin-proposal-class-properties'
   ]
